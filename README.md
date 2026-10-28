@@ -4,6 +4,10 @@
 
 这是实验代码。`tests/` 中的合成样本只验证软件，不代表 VLA 或仿真任务成功率。实际执行、安装情况见 [VALIDATION.md](VALIDATION.md)。
 
+后续实验的目录、命名、数据生命周期、权重/rollout/评测保存规则见 [docs/REPOSITORY_SPEC.md](docs/REPOSITORY_SPEC.md)；Codex 自动遵守的工作区规则见 [AGENTS.md](AGENTS.md)。
+
+从当前单任务基线扩展到标准数据目录、主动采集、多任务和 UR5 的阶段路线见 [docs/EXTENSION_ROADMAP.md](docs/EXTENSION_ROADMAP.md)。
+
 ## 安装
 
 使用两个 Python 3.10 环境，避免仿真与 OFT 的 TensorFlow / Transformers 依赖互相影响：
