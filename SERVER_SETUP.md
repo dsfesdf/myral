@@ -1,5 +1,22 @@
 # 在 GPU 服务器上恢复训练项目
 
+## 完整项目快照
+
+`transfer/full-project.tar.gz` 包含本机项目的代码、原始及处理后数据、
+运行日志、第三方代码和缓存。仅排除 Git 内部元数据与 `transfer/`
+目录（避免重复打包已有传输包）。项目内所有 `.gitignore` 已按要求删除。
+全量快照是打包时刻的文件副本，不包含后来新增的文件。
+
+克隆并执行 `git lfs pull` 后，可在仓库根目录恢复：
+
+```bash
+sha256sum -c transfer/full-project.tar.gz.sha256
+tar -xzf transfer/full-project.tar.gz
+```
+
+此操作会恢复快照中的同名文件，建议在刚克隆的目录中执行。
+Python 环境、系统驱动及项目目录外的模型缓存仍需在服务器另行准备。
+
 代码依赖的上游仓库由 `scripts/install.sh` 按
 `configs/upstream-lock.json` 中的版本自动下载，无需复制本机 Python 环境。
 
