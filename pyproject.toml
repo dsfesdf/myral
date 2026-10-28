@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "libero-handoff"
+version = "0.1.0"
+description = "Local OpenVLA-OFT policies and takeover capability experiments in LIBERO"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.23", "scipy>=1.9", "h5py>=3.8", "Pillow>=9", "matplotlib>=3.6"]
+
+[project.optional-dependencies]
+capability = ["torch>=2.0"]
+test = ["pytest>=7"]
+
+[project.scripts]
+handoff = "handoff.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["handoff*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

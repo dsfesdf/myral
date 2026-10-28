@@ -1,0 +1,10 @@
+numpy==1.26.4
+accelerate==0.34.2
+huggingface_hub==0.26.5
+torch==2.2.0
+torchvision==0.17.0
+torchaudio==2.2.0
+peft==0.11.1
+tensorflow-metadata==1.15.0
+protobuf==3.20.3
+wandb==0.16.6
